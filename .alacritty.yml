@@ -1,3 +1,9 @@
+window:
+  opacity: 0.8
+  dimensions:
+     columns: 133
+     lines: 50
+
 font:
   normal:
     family: FiraMonoNerdFontMono

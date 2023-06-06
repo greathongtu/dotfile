@@ -1,0 +1,18 @@
+font:
+  normal:
+    family: FiraMonoNerdFontMono
+    style: Regular
+
+  bold:
+    family: FiraMonoNerdFontMono
+    style: Bold
+
+  italic:
+    family: FiraMonoNerdFontMono
+    style: Italic
+
+  bold_italic:
+    family: FiraMonoNerdFontMono
+    style: Bold Italic
+
+  size: 11

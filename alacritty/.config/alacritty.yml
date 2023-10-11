@@ -1,6 +1,7 @@
 window:
   opacity: 0.8
-  startup_mode: "Fullscreen"
+  startup_mode: "Maximized"
+  # startup_mode: "Fullscreen"
   # dimensions:
   #    columns: 133
   #    lines: 30 
@@ -8,18 +9,22 @@ window:
 font:
   normal:
     family: FiraMonoNerdFontMono
+    #family: InconsolataLGCNerdFont
     style: Regular
 
   bold:
     family: FiraMonoNerdFontMono
+    #family: InconsolataLGCNerdFont
     style: Bold
 
   italic:
     family: FiraMonoNerdFontMono
+    #family: InconsolataLGCNerdFont
     style: Italic
 
   bold_italic:
     family: FiraMonoNerdFontMono
+    #family: InconsolataLGCNerdFont
     style: Bold Italic
 
   size: 15

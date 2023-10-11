@@ -12,9 +12,15 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
-config.color_scheme = 'OneDark (base16)'
+config.color_scheme = 'Catppuccin Frappe'
 -- config.font = wezterm.font 'JetBrains Mono'
 config.font = wezterm.font 'FiraCodeNerdFont'
+config.window_padding = {
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0;
+}
 
 wezterm.on('gui-startup', function(cmd)
   local tab, pane, window = mux.spawn_window(cmd or {})

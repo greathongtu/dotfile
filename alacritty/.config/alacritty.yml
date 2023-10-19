@@ -8,22 +8,22 @@ window:
 
 font:
   normal:
-    family: FiraMonoNerdFontMono
+    family: FiraCodeNerdFont
     #family: InconsolataLGCNerdFont
     style: Regular
 
   bold:
-    family: FiraMonoNerdFontMono
+    family: FiraCodeNerdFont
     #family: InconsolataLGCNerdFont
     style: Bold
 
   italic:
-    family: FiraMonoNerdFontMono
+    family: FiraCodeNerdFont
     #family: InconsolataLGCNerdFont
     style: Italic
 
   bold_italic:
-    family: FiraMonoNerdFontMono
+    family: FiraCodeNerdFont
     #family: InconsolataLGCNerdFont
     style: Bold Italic
 

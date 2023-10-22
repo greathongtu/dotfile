@@ -12,10 +12,11 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
-config.color_scheme = 'Catppuccin Frappe'
+-- config.color_scheme = 'Catppuccin Frappe'
+config.color_scheme = 'Catppuccin Latte'
 -- config.font = wezterm.font 'JetBrains Mono'
 config.font = wezterm.font 'FiraCodeNerdFont'
-config.font_size = 19.0
+config.font_size = 17.0
 config.window_padding = {
   left = 0,
   right = 0,

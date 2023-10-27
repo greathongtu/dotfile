@@ -11,11 +11,12 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
--- This is where you actually apply your config choices
--- config.color_scheme = 'Catppuccin Frappe'
 config.color_scheme = 'Catppuccin Latte'
--- config.font = wezterm.font 'JetBrains Mono'
 config.font = wezterm.font 'FiraCodeNerdFont'
+-- config.font = wezterm.font 'JetBrains Mono'
+-- this is for Windows
+-- config.font = wezterm.font 'FiraCode Nerd Font Mono'
+
 config.font_size = 17.0
 config.window_padding = {
   left = 0,
@@ -27,6 +28,9 @@ config.window_padding = {
 wezterm.on('gui-startup', function(cmd)
   local tab, pane, window = mux.spawn_window(cmd or {})
   window:gui_window():toggle_fullscreen()
+-- For Windows
+-- window:gui_window():maximize()
+    
 end)
 
 return config

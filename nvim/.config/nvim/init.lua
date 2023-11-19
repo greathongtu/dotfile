@@ -212,6 +212,7 @@ require('lazy').setup({
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+-- Customs
 -- Tab / indentation
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
@@ -225,6 +226,8 @@ vim.opt.guicursor = {
   'i-ci:ver25-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100',
   'r:hor50-Cursor/lCursor-blinkwait100-blinkon100-blinkoff100'
 }
+
+vim.keymap.set('n', '<F12>', ':Format<CR>')
 
 -- Set highlight on search
 vim.o.hlsearch = false

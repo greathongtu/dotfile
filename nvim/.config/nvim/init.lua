@@ -462,7 +462,7 @@ end
 local servers = {
   clangd = {},
   gopls = {},
-  -- pyright = {},
+  pyright = {},
   rust_analyzer = {
     -- ['rust-analyzer'] = {
     --   -- diagnostics = {
@@ -475,8 +475,8 @@ local servers = {
     --   }
     -- }
   },
-  -- tsserver = {},
-  -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+  tsserver = {},
+  html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   lua_ls = {
     Lua = {

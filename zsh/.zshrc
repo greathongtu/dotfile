@@ -17,3 +17,5 @@ export https_proxy="${PROXY_HTTP}"
 
 alias vim="nvim"
 alias gits="git status"
+alias la="ls -a"
+alias ll="ls -la"

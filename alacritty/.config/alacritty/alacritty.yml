@@ -36,4 +36,4 @@ shell:
   - zellij attach --index 0 || zellij
 
 import:
-  - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml

@@ -1,32 +1,36 @@
 window:
-  startup_mode: "Maximized"
-  # startup_mode: "Fullscreen"
+  # startup_mode: "Maximized"
+  startup_mode: "Fullscreen"
   # dimensions:
   #    columns: 133
   #    lines: 30 
 
 font:
   normal:
-    family: FiraCodeNerdFont
-    #family: InconsolataLGCNerdFont
+    family: InconsolataNerdFont
+    # family: FiraCodeNerdFont
+    # family: HackNerdFont
     style: Regular
 
   bold:
-    family: FiraCodeNerdFont
-    #family: InconsolataLGCNerdFont
+    # family: FiraCodeNerdFont
+    # family: HackNerdFont
+    family: InconsolataNerdFont
     style: Bold
 
   italic:
-    family: FiraCodeNerdFont
-    #family: InconsolataLGCNerdFont
+    # family: FiraCodeNerdFont
+    # family: HackNerdFont
+    family: InconsolataNerdFont
     style: Italic
 
   bold_italic:
-    family: FiraCodeNerdFont
-    #family: InconsolataLGCNerdFont
+    # family: FiraCodeNerdFont
+    # family: HackNerdFont
+    family: InconsolataNerdFont
     style: Bold Italic
 
-  size: 15
+  size: 17
 
 shell:
   program: /usr/bin/bash

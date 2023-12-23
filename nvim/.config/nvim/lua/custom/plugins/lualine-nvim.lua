@@ -1,6 +1,7 @@
-local config = function() -- local theme = 'onedark'
+local config = function() 
+	local theme = 'onedark'
 	-- local theme = 'gruvbox_light'
-	local theme = 'onelight'
+	-- local theme = 'onelight'
 
 	require('lualine').setup {
 		options = {
@@ -9,13 +10,6 @@ local config = function() -- local theme = 'onedark'
 			component_separators = { left = '', right = ''},
 			section_separators = { left = '', right = ''},
 		},
-		sections = {
-			lualine_a = {
-				{
-					'buffers',
-				}
-			},
-		}
 	}
 end
 

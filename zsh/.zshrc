@@ -19,3 +19,5 @@ alias vim="nvim"
 alias gits="git status"
 alias la="ls -a"
 alias ll="ls -la"
+
+export PATH="$PATH:$(go env GOPATH)/bin"

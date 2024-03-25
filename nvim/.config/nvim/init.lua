@@ -598,8 +598,6 @@ vim.o.expandtab = true
 vim.o.smartindent = true
 vim.o.cmdheight = 1
 
-vim.keymap.set("n", "<F12>", ":Format<CR>")
-
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience

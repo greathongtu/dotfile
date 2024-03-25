@@ -1,20 +1,20 @@
-local config = function() 
-	local theme = 'onedark'
+local config = function()
+	-- local theme = "onedark"
 	-- local theme = 'gruvbox_light'
-	-- local theme = 'onelight'
+	local theme = "onelight"
 
-	require('lualine').setup {
+	require("lualine").setup({
 		options = {
 			theme = theme,
 			globalstatus = true,
-			component_separators = { left = '', right = ''},
-			section_separators = { left = '', right = ''},
+			component_separators = { left = "", right = "" },
+			section_separators = { left = "", right = "" },
 		},
-	}
+	})
 end
 
 return {
-	'nvim-lualine/lualine.nvim',
+	"nvim-lualine/lualine.nvim",
 	lazy = false,
 	config = config,
 }

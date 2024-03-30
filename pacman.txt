@@ -6,6 +6,7 @@ btop
 clang
 clash
 cmake
+docker
 docker-compose
 fcitx5-chinese-addons
 fcitx5-im

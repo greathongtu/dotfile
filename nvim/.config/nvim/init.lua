@@ -334,6 +334,9 @@ require("lazy").setup({
 				pyright = {},
 				rust_analyzer = {},
 				taplo = {},
+				templ = {},
+				htmx = {},
+				tailwindcss = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 				--
 				-- Some languages (like typescript) have entire language plugins that can be useful:
@@ -423,22 +426,32 @@ require("lazy").setup({
 	{
 		-- Autocompletion
 		"hrsh7th/nvim-cmp",
+		event = "InsertEnter",
 		dependencies = {
-			-- Snippet Engine & its associated nvim-cmp source
-			"L3MON4D3/LuaSnip",
+			{
+				"L3MON4D3/LuaSnip",
+				build = (function()
+					if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
+						return
+					end
+					return "make install_jsregexp"
+				end)(),
+				dependencies = {
+					{
+						"rafamadriz/friendly-snippets",
+						config = function()
+							require("luasnip.loaders.from_vscode").lazy_load()
+						end,
+					},
+				},
+			},
 			"saadparwaiz1/cmp_luasnip",
-
-			-- Adds LSP completion capabilities
 			"hrsh7th/cmp-nvim-lsp",
-
-			-- Adds a number of user-friendly snippets
-			"rafamadriz/friendly-snippets",
 			"hrsh7th/cmp-path",
 		},
 		config = function()
 			-- See `:help cmp`
 			local cmp = require("cmp")
-
 			local luasnip = require("luasnip")
 			luasnip.config.setup({})
 
@@ -518,28 +531,26 @@ require("lazy").setup({
 	},
 
 	-- {
-	--   -- Theme inspired by Atom
-	--   'navarasu/onedark.nvim',
-	--   priority = 999,
-	--   config = function()
-	--     vim.cmd.colorscheme 'onedark'
-	--   end,
+	-- 	-- Set lualine as statusline
+	-- 	"nvim-lualine/lualine.nvim",
+	-- 	-- See `:help lualine.txt`
+	-- 	opts = {
+	-- 		options = {
+	-- 			icons_enabled = false,
+	-- 			theme = "onedark",
+	-- 			component_separators = "|",
+	-- 			section_separators = "",
+	-- 		},
+	-- 	},
 	-- },
-
 	{
-		-- Set lualine as statusline
-		"nvim-lualine/lualine.nvim",
-		-- See `:help lualine.txt`
-		opts = {
-			options = {
-				icons_enabled = false,
-				theme = "onedark",
-				component_separators = "|",
-				section_separators = "",
-			},
-		},
+		"echasnovski/mini.nvim",
+		config = function()
+			local statusline = require("mini.statusline")
+			-- set use_icons to true if you have a Nerd Font
+			statusline.setup({ use_icons = true })
+		end,
 	},
-
 	{
 		-- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
@@ -620,3 +631,4 @@ vim.keymap.set("v", ">", ">gv")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+vim.filetype.add({ extension = { templ = "templ" } })

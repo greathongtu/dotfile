@@ -196,7 +196,7 @@ require("lazy").setup({
 			local builtin = require("telescope.builtin")
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
 			vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[F]ind [K]eymaps" })
-			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
+			vim.keymap.set("n", "<leader><leader>", builtin.find_files, { desc = "[F]ind [F]iles" })
 
 			vim.keymap.set("n", "<leader>fs", builtin.builtin, { desc = "[F]ind [S]elect Telescope" })
 			vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "[F]ind current [W]ord" })
@@ -204,7 +204,7 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
 			vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "[F]ind [R]esume" })
 			vim.keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
-			vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+			vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "[ ] Find existing buffers" })
 
 			-- Slightly advanced example of overriding default behavior and theme
 			vim.keymap.set("n", "<leader>/", function()
@@ -396,7 +396,6 @@ require("lazy").setup({
 			})
 		end,
 	},
-	{ "github/copilot.vim" },
 	{ -- Autoformat
 		"stevearc/conform.nvim",
 		opts = {
@@ -513,7 +512,24 @@ require("lazy").setup({
 			})
 		end,
 	},
-
+	{
+		"ellisonleao/gruvbox.nvim",
+		priority = 1000,
+		background = "dark",
+		config = function()
+			vim.cmd.colorscheme("gruvbox")
+		end,
+	},
+	-- return {
+	-- 	"catppuccin/nvim",
+	-- 	name = "catppuccin",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		-- vim.cmd.colorscheme("catppuccin-frappe")
+	-- 		-- vim.cmd.colorscheme("catppuccin-latte")
+	-- 		vim.cmd.colorscheme("catppuccin-mocha")
+	-- 	end,
+	-- }
 	{
 		"folke/todo-comments.nvim",
 		event = "VimEnter",

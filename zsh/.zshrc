@@ -15,6 +15,7 @@ PROXY_HTTP="http://127.0.0.1:7890"
 export http_proxy="${PROXY_HTTP}"
 export https_proxy="${PROXY_HTTP}"
 
+alias v="nvim"
 alias vim="nvim"
 alias gits="git status"
 alias la="ls -a"

@@ -11,10 +11,11 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
--- config.color_scheme = "Catppuccin Latte"
-config.color_scheme = "Gruvbox dark, soft (base16)"
+config.color_scheme = "Catppuccin Latte"
+-- config.color_scheme = "Gruvbox dark, soft (base16)"
 -- config.font = wezterm.font("FiraCodeNerdFont")
-config.font = wezterm.font("Agave Nerd Font Mono")
+-- config.font = wezterm.font("Agave Nerd Font Mono")
+config.font = wezterm.font("0xproto")
 -- config.font = wezterm.font("InconsolataNerdFont")
 -- config.font = wezterm.font 'JetBrains Mono'
 -- this is for Windows

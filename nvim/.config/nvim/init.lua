@@ -49,8 +49,8 @@ vim.o.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
+vim.keymap.set("n", "g[", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
+vim.keymap.set("n", "g]", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "[E]rror message" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
@@ -270,12 +270,8 @@ require("lazy").setup({
 					map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
 
 					-- Fuzzy find all the symbols in your current document.
-					map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-					map(
-						"<leader>ws",
-						require("telescope.builtin").lsp_dynamic_workspace_symbols,
-						"[W]orkspace [S]ymbols"
-					)
+					map("gs", require("telescope.builtin").lsp_document_symbols, "g [S]ymbols")
+					map("gS", require("telescope.builtin").lsp_dynamic_workspace_symbols, "g proj [S]ymbols")
 
 					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 

@@ -282,6 +282,9 @@ require("lazy").setup({
 					--  For example, in C this would take you to the header.
 					map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 					map("<F12>", vim.lsp.buf.format, "")
+					map("<leader>h", function()
+						vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+					end, "inlay hints")
 
 					-- The following two autocommands are used to highlight references of the
 					-- word under your cursor when your cursor rests there for a little while.
@@ -326,9 +329,54 @@ require("lazy").setup({
 
 			local servers = {
 				clangd = {},
-				gopls = {},
+				gopls = {
+					settings = {
+						hints = {
+							rangeVariableTypes = true,
+							parameterNames = true,
+							constantValues = true,
+							assignVariableTypes = true,
+							compositeLiteralFields = true,
+							compositeLiteralTypes = true,
+							functionTypeParameters = true,
+						},
+					},
+				},
 				pyright = {},
-				rust_analyzer = {},
+				rust_analyzer = {
+					inlayHints = {
+						bindingModeHints = {
+							enable = false,
+						},
+						chainingHints = {
+							enable = true,
+						},
+						closingBraceHints = {
+							enable = true,
+							minLines = 25,
+						},
+						closureReturnTypeHints = {
+							enable = "never",
+						},
+						lifetimeElisionHints = {
+							enable = "never",
+							useParameterNames = false,
+						},
+						maxLength = 25,
+						parameterHints = {
+							enable = true,
+						},
+						reborrowHints = {
+							enable = "never",
+						},
+						renderColons = true,
+						typeHints = {
+							enable = true,
+							hideClosureInitialization = false,
+							hideNamedConstructor = false,
+						},
+					},
+				},
 				taplo = {},
 				templ = {},
 				htmx = {},
@@ -337,12 +385,7 @@ require("lazy").setup({
 				--
 				-- Some languages (like typescript) have entire language plugins that can be useful:
 				--    https://github.com/pmizio/typescript-tools.nvim
-				--
-
-				-- But for many setups, the LSP (`tsserver`) will work just fine
 				tsserver = {},
-				--
-
 				lua_ls = {
 					-- cmd = {...},
 					-- filetypes = { ...},
@@ -354,7 +397,6 @@ require("lazy").setup({
 							},
 
 							-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-
 							-- diagnostics = { disable = { 'missing-fields' } },
 						},
 					},

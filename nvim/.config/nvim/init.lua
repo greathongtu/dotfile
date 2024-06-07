@@ -107,16 +107,10 @@ require("lazy").setup({
 		-- options to `gitsigns.nvim`. This is equivalent to the following Lua:
 		--    require('gitsigns').setup({ ... })
 		"lewis6991/gitsigns.nvim",
-		opts = {
-			-- See `:help gitsigns.txt`
-			signs = {
-				add = { text = "+" },
-				change = { text = "~" },
-				delete = { text = "_" },
-				topdelete = { text = "‾" },
-				changedelete = { text = "~" },
-			},
-		},
+		config = function()
+			require("gitsigns").setup()
+			vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
+		end,
 	},
 	{ -- Useful plugin to show you pending keybinds.
 		"folke/which-key.nvim",
@@ -204,7 +198,6 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
 			vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "[F]ind [R]esume" })
 			vim.keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
-			vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "[ ] Find existing buffers" })
 
 			-- Slightly advanced example of overriding default behavior and theme
 			vim.keymap.set("n", "<leader>/", function()
@@ -385,9 +378,6 @@ require("lazy").setup({
 					},
 				},
 				taplo = {},
-				templ = {},
-				htmx = {},
-				tailwindcss = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 				--
 				-- Some languages (like typescript) have entire language plugins that can be useful:
@@ -640,8 +630,65 @@ require("lazy").setup({
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 	},
+	{
+		{
+			"mfussenegger/nvim-dap",
+			dependencies = {
+				"leoluz/nvim-dap-go",
+				"rcarriga/nvim-dap-ui",
+				"theHamsta/nvim-dap-virtual-text",
+				"nvim-neotest/nvim-nio",
+				"williamboman/mason.nvim",
+			},
+			config = function()
+				local dap = require("dap")
+				local ui = require("dapui")
 
-	require("kickstart.plugins.debug"),
+				require("dapui").setup()
+				require("dap-go").setup()
+
+				require("nvim-dap-virtual-text").setup()
+
+				-- Handled by nvim-dap-go
+				-- dap.adapters.go = {
+				--   type = "server",
+				--   port = "${port}",
+				--   executable = {
+				--     command = "dlv",
+				--     args = { "dap", "-l", "127.0.0.1:${port}" },
+				--   },
+				-- }
+
+				vim.keymap.set("n", "<space>b", dap.toggle_breakpoint)
+				-- vim.keymap.set("n", "<space>gb", dap.run_to_cursor)
+
+				-- Eval var under cursor
+				vim.keymap.set("n", "<space>?", function()
+					require("dapui").eval(nil, { enter = true })
+				end)
+
+				vim.keymap.set("n", "<F1>", dap.continue)
+				vim.keymap.set("n", "<F2>", dap.step_into)
+				vim.keymap.set("n", "<F3>", dap.step_over)
+				vim.keymap.set("n", "<F4>", dap.step_out)
+				vim.keymap.set("n", "<F5>", dap.step_back)
+				vim.keymap.set("n", "<F13>", dap.restart)
+
+				dap.listeners.before.attach.dapui_config = function()
+					ui.open()
+				end
+				dap.listeners.before.launch.dapui_config = function()
+					ui.open()
+				end
+				dap.listeners.before.event_terminated.dapui_config = function()
+					ui.close()
+				end
+				dap.listeners.before.event_exited.dapui_config = function()
+					ui.close()
+				end
+			end,
+		},
+	},
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
 	--    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
@@ -683,4 +730,3 @@ vim.keymap.set("v", ">", ">gv")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-vim.filetype.add({ extension = { templ = "templ" } })

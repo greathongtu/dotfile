@@ -547,24 +547,24 @@ require("lazy").setup({
 			})
 		end,
 	},
+	-- {
+	-- 	"ellisonleao/gruvbox.nvim",
+	-- 	priority = 1000,
+	-- 	background = "dark",
+	-- 	config = function()
+	-- 		vim.cmd.colorscheme("gruvbox")
+	-- 	end,
+	-- },
 	{
-		"ellisonleao/gruvbox.nvim",
+		"catppuccin/nvim",
+		name = "catppuccin",
 		priority = 1000,
-		background = "dark",
 		config = function()
-			vim.cmd.colorscheme("gruvbox")
+			-- vim.cmd.colorscheme("catppuccin-frappe")
+			vim.cmd.colorscheme("catppuccin-latte")
+			-- vim.cmd.colorscheme("catppuccin-mocha")
 		end,
 	},
-	-- return {
-	-- 	"catppuccin/nvim",
-	-- 	name = "catppuccin",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		-- vim.cmd.colorscheme("catppuccin-frappe")
-	-- 		-- vim.cmd.colorscheme("catppuccin-latte")
-	-- 		vim.cmd.colorscheme("catppuccin-mocha")
-	-- 	end,
-	-- }
 	{
 		"folke/todo-comments.nvim",
 		event = "VimEnter",

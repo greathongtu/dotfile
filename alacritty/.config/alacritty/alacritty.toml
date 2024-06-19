@@ -24,4 +24,5 @@ args = ["-l", "-c", "zellij attach --index 0 || zellij"]
 program = "/usr/bin/bash"
 
 [window]
-startup_mode = "Windowed"
+# startup_mode = "Windowed"
+startup_mode = "Fullscreen"

@@ -1,4 +1,4 @@
-import = ["/home/aaron/.config/alacritty/catppuccin-latte.toml"]
+import = ["/home/aaron/.config/alacritty/tokyo-night-storm.toml"]
 
 [font]
 size = 17

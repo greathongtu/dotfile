@@ -1,9 +1,7 @@
---  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Make line numbers default
-vim.opt.relativenumber = true
 vim.opt.number = true
 
 -- Enable mouse mode
@@ -547,24 +545,25 @@ require("lazy").setup({
 			})
 		end,
 	},
-	-- {
-	-- 	"ellisonleao/gruvbox.nvim",
-	-- 	priority = 1000,
-	-- 	background = "dark",
-	-- 	config = function()
-	-- 		vim.cmd.colorscheme("gruvbox")
-	-- 	end,
-	-- },
+
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
+		"folke/tokyonight.nvim",
+		lazy = false,
 		priority = 1000,
 		config = function()
-			-- vim.cmd.colorscheme("catppuccin-frappe")
-			vim.cmd.colorscheme("catppuccin-latte")
-			-- vim.cmd.colorscheme("catppuccin-mocha")
+			vim.cmd.colorscheme("tokyonight-day")
 		end,
 	},
+	-- {
+	-- 	"catppuccin/nvim",
+	-- 	name = "catppuccin",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		-- vim.cmd.colorscheme("catppuccin-frappe")
+	-- 		vim.cmd.colorscheme("catppuccin-latte")
+	-- 		-- vim.cmd.colorscheme("catppuccin-mocha")
+	-- 	end,
+	-- },
 	{
 		"folke/todo-comments.nvim",
 		event = "VimEnter",

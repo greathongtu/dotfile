@@ -1,23 +1,16 @@
-import = ["/home/aaron/.config/alacritty/tokyo-night-storm.toml"]
+# import = ["/home/aaron/.config/alacritty/gruvbox_material_medium_light.toml"]
+import = ["/home/aaron/.config/alacritty/catppuccin-latte.toml"]
+
+[env]
+TERM = "xterm-256color"
 
 [font]
 size = 17
 
-[font.bold]
-family = "InconsolataNerdFont"
-style = "Bold"
-
-[font.bold_italic]
-family = "InconsolataNerdFont"
-style = "Bold Italic"
-
-[font.italic]
-family = "InconsolataNerdFont"
-style = "Italic"
-
-[font.normal]
-family = "InconsolataNerdFont"
-style = "Regular"
+normal = { family = "CaskaydiaMono Nerd Font", style = "Regular" }
+bold = { family = "CaskaydiaMono Nerd Font", style = "Bold" }
+italic = { family = "CaskaydiaMono Nerd Font", style = "Italic" }
+# "InconsolataNerdFont"
 
 [shell]
 args = ["-l", "-c", "zellij attach --index 0 || zellij"]
@@ -26,3 +19,6 @@ program = "/usr/bin/bash"
 [window]
 # startup_mode = "Windowed"
 startup_mode = "Fullscreen"
+
+[keyboard]
+bindings = [{ key = "F11", action = "ToggleFullscreen" }]

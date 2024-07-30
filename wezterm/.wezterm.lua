@@ -21,7 +21,7 @@ config.font = wezterm.font("0xproto")
 -- this is for Windows
 -- config.font = wezterm.font 'FiraCode Nerd Font Mono'
 
-config.font_size = 18.0
+config.font_size = 16.0
 config.window_padding = {
 	left = 0,
 	right = 0,

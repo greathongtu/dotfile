@@ -16,8 +16,9 @@ export http_proxy="${PROXY_HTTP}"
 export https_proxy="${PROXY_HTTP}"
 
 alias v="nvim"
-alias gits="git status"
+alias gs="git status"
 alias la="ls -a"
 alias ll="ls -la"
+alias lg="lazygit"
 
 export PATH="$PATH:$(go env GOPATH)/bin:/home/aaron/.cargo/bin"

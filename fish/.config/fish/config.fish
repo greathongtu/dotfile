@@ -6,7 +6,8 @@ if status is-interactive
     set -xg http_proxy http://127.0.0.1:7890
     set -xg all_proxy socks5://127.0.0.1:7891
 
-    alias vim='nvim'
+    alias v='nvim'
+    alias lg='lazyvim'
 
     function fish_greeting
         echo Stand up Soldier! Time is (set_color yellow; date +%T; set_color normal)

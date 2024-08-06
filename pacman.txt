@@ -20,6 +20,7 @@ git
 go
 gzip
 hugo
+lazygit
 less
 lldb
 make

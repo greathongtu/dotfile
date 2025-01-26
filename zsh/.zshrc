@@ -11,7 +11,7 @@ plug "esc/conda-zsh-completion"
 autoload -Uz compinit
 compinit
 
-PROXY_HTTP="http://127.0.0.1:7890"
+PROXY_HTTP="http://127.0.0.1:7897"
 export http_proxy="${PROXY_HTTP}"
 export https_proxy="${PROXY_HTTP}"
 
@@ -20,5 +20,8 @@ alias gs="git status"
 alias la="ls -a"
 alias ll="ls -la"
 alias lg="lazygit"
+
+set -o vi
+bindkey '^R' history-incremental-search-backward
 
 export PATH="$PATH:$(go env GOPATH)/bin:/home/aaron/.cargo/bin"

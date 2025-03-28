@@ -5,7 +5,6 @@ plug "zsh-users/zsh-autosuggestions"
 plug "zap-zsh/supercharge"
 plug "zap-zsh/zap-prompt"
 plug "zsh-users/zsh-syntax-highlighting"
-plug "esc/conda-zsh-completion"
 
 # Load and initialise completion system
 autoload -Uz compinit
@@ -20,6 +19,8 @@ alias gs="git status"
 alias la="ls -a"
 alias ll="ls -la"
 alias lg="lazygit"
+alias hx=helix
+alias zed=zeditor
 
 set -o vi
 bindkey '^R' history-incremental-search-backward

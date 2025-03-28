@@ -1,14 +1,11 @@
 adobe-source-han-sans-cn-fonts
 adobe-source-han-serif-cn-fonts
-alacritty
 clash
 docker
 docker-compose
 fcitx5-chinese-addons
 fcitx5-im
 firefox
-gnome-shell
-gnome-tweaks
 wezterm
 base-devel
 btop
@@ -20,6 +17,7 @@ git
 go
 gzip
 hugo
+helix
 lazygit
 less
 lldb
